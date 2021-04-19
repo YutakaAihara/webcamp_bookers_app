@@ -4,7 +4,24 @@ class BooksController < ApplicationController
 
   def show
   end
+  
+  def new
+    @book = Book.new
+  end
 
+  def create
+    book = Book.new(params[:id])
+    book.save
+    redirect_to book_path(book.id)
+  end
+  
   def edit
   end
+  
+  private
+  
+  def book_params
+    params.require(:book).permit(:title, :body)
+  end
+    
 end

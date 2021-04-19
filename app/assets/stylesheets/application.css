@@ -19,6 +19,7 @@
   box-sizing: border-box;
 }
 
+/*全ページ共通のCSS*/
 main {
   background-color: #fff;
   color: #333;
@@ -28,7 +29,7 @@ main {
   margin: 33px;
 }
 
-
+/*リンクの色などは共通していたのでここで*/
 .link:link {
   color: #666666;
 }
