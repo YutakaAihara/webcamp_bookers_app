@@ -29,16 +29,16 @@ main {
   margin: 33px;
 }
 
-/*リンクの色などは共通していたのでここで*/
-.link:link {
+/*リンクの色などは共通していたのでここで設定*/
+a:link {
   color: #666666;
 }
 
-.link:visited {
+a:visited {
   color: #000;
 }
 
-.link:hover {
+a:hover {
   color: #fff;
   background-color: #000;
 }
