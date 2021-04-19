@@ -13,3 +13,32 @@
  *= require_tree .
  *= require_self
  */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*全ページ共通のCSS*/
+main {
+  background-color: #fff;
+  color: #333;
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+  margin: 33px;
+}
+
+/*リンクの色などは共通していたのでここで設定*/
+a:link {
+  color: #666666;
+}
+
+a:visited {
+  color: #000;
+}
+
+a:hover {
+  color: #fff;
+  background-color: #000;
+}
