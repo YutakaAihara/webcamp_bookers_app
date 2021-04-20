@@ -1,36 +1,39 @@
-<main>
-  <h1 class="index-heading">Books</h1>
-  <table>
-    <thead>
-      <tr>
-        <th>Title</th>
-        <th>Body</th>
-        <th clspan="3"></th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @books.each do |book| %>
-      <tr>
-        <td><%= book.title %></td>
-        <td><%= book.body %></td>
-        <td><%= link_to "Show", book_path(book) %></td>
-        <td><%= link_to "Edit", edit_book_path(book) %></td>
-        <td><%= link_to "Destroy", book_path(book), method: :delete %></td>
-      </tr>
-      <% end %>
-    </tbody>
-  </table>
-
-  <h2 class="new-heading">New book</h2>
-  <%= form_with model:@book, local:true do |f| %>
-    <div class="new-content">
-      <p>Title</p>
-      <%= f.text_field :title %>
-    </div>
-    <div class="new-content">
-      <p>Body</p>
-      <%= f.text_area :body %>
-    </div>
-    <%= f.submit 'Create Book' %>
+<% if @book.errors.any? %>
+  <% @book.errors.full_messages.each do |message| %>
+    <%= message %>
   <% end %>
-</main>
+<% end %>  
+<h1 class="index-heading">Books</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Body</th>
+      <th clspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @books.each do |book| %>
+    <tr>
+      <td><%= book.title %></td>
+      <td><%= book.body %></td>
+      <td><%= link_to "Show", book_path(book) %></td>
+      <td><%= link_to "Edit", edit_book_path(book) %></td>
+      <td><%= link_to "Destroy", book_path(book), method: :delete, data: {confirm: "Are you sure?"} %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<h2 class="new-heading">New book</h2>
+<%= form_with model:@book, local:true do |f| %>
+  <div class="new-content">
+    <p>Title</p>
+    <%= f.text_field :title %>
+  </div>
+  <div class="new-content">
+    <p>Body</p>
+    <%= f.text_area :body %>
+  </div>
+  <%= f.submit 'Create Book', class: "btn" %>
+<% end %>
