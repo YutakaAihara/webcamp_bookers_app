@@ -16,13 +16,13 @@
 
 <h1 class="edit-heading">Editing Book</h1>
 <%= form_with model:@book, local:true do |f| %>
-  <div class="edit-content">
-    <p>Title</p>
-    <%= f.text_field :title %>
+  <div class="field">
+    <%= f.label :title, 'Title', class: "book_title" %>
+    <%= f.text_field :title, class: "book_title" %>
   </div>
-  <div class="edit-content">
-    <p>Body</p>
-    <%= f.text_area :body %>
+  <div class="field">
+    <%= f.label :body, 'Body', class: "book_body" %>
+    <%= f.text_area :body, class: "book_body" %>
   </div>
   <%= f.submit 'Update Book', class: "btn" %>
 <% end %>
