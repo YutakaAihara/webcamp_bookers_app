@@ -31,19 +31,19 @@
       <li class="error-message">
         <%= message %>
       </li>
-      <% end %>  
+      <% end %>
     </li>
   </ul>
 </div>
 <% end %>
-<%= form_with model:@book, local:true do |f| %>
-  <div class="new-contents">
-    <p>Title</p>
-    <div class = "new-text"><%= f.text_field :title %></div>
+<%= form_with model:@book, local:true, class: "new_book" do |f| %>
+  <div class="field">
+    <%= f.label :title, 'Title', class: "book_title" %>
+    <%= f.text_field :title, class: "book_title" %>
   </div>
-  <div class="new-contents">
-    <p>Body</p>
-    <div class = "new-text"><%= f.text_area :body %></div>
+  <div class="field">
+    <%= f.label :body, 'Body', class: "book_body" %>
+    <%= f.text_area :body, class: "book_body" %>
   </div>
   <%= f.submit 'Create Book', class: "btn" %>
 <% end %>
